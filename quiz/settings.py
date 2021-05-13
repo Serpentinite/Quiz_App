@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 from socket import gethostname
 hostname = gethostname()
 
-if LAPTOP-QKQ9VDB4 in hostname:
+if 'LAPTOP-QKQ9VDB4' in hostname:
     # デバッグ環境
     DEBUG = True
     DATABASES = {
