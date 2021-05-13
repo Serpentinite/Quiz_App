@@ -1,5 +1,5 @@
 from django.db import models
-# from django.urls import reverse_lazy
+from django.urls import reverse_lazy
 
 class Quiz(models.Model):
     id = models.IntegerField(primary_key=True)
