@@ -34,6 +34,11 @@ class QuizListView(PaginationMixin, ListView):
     template_name = 'quiz_list.html'
     paginate_by = 10
 
+    def get_queryset(self):
+        qs = super(QuizListView, self).get_queryset()
+        qs = qs.order_by('id')
+        return qs
+
 class QuizUpdateView(UpdateView):
     model = Quiz
     template_name = 'update_quiz.html'
