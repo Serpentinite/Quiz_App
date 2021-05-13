@@ -31,8 +31,8 @@ class QuizCreateView(CreateView):
         initial['category'] = 'その他'
         return initial
 
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 
 
@@ -46,24 +46,18 @@ class QuizUpdateView( UpdateView):
     template_name = 'update_quiz.html'
     form_class = forms.QuizUpdateForm
 
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 
 
 class QuizDeleteView( DeleteView):
     model = Quiz
     template_name = 'delete_quiz.html'
-    success_url = reverse_lazy('quiz:quiz_list')
+    success_url = reverse_lazy('app:quiz_list')
      
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
-
-class QuizFormView(ListView):
-    template_name = 'home.html'
-    model = Quiz
-    def get_queryset(self):
-        return Quiz.objects.order_by('?')[:1]
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
 
 # # エラーハンドリング
 # def page_not_found(request, exception):
