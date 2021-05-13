@@ -16,10 +16,10 @@
     {% for quiz in object_list %}
     <tr>
         <th class="big"><a href="{% url 'app:update_quiz' pk=quiz.id %}">{{ quiz.pk }}</a></th>
-        <td class="text-nowrap">{{ app.quiz_content }}</td class="text-nowrap">
-        <td class="text-nowrap">{{ app.answer }}</td class="text-nowrap">
-        <td class="text-nowrap">{{ app.category }}</td class="text-nowrap">
-        <td class="text-nowrap">{{ app.sub_category }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.quiz_content }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.answer }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.category }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.sub_category }}</td class="text-nowrap">
     </tr>
     {% endfor %}
 </table>
