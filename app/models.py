@@ -11,6 +11,6 @@ class Quiz(models.Model):
     class Meta:
         db_table = 'quiz'
 
-    # def get_absolute_url(self):
-    #     return reverse_lazy('app:quiz_list')
+     def get_absolute_url(self):
+         return reverse_lazy('app:quiz_list')
 
