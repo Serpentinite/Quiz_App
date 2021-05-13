@@ -14,8 +14,12 @@ from django.views.generic.list import ListView
 from pure_pagination.mixins import PaginationMixin
 from django.urls import reverse_lazy
 # from django.contrib.auth.mixins import 
-class HomeView(TemplateView):
-    template_name='home.html'
+
+class QuizFormView(ListView):
+    template_name = 'home.html'
+    model = Quiz
+    def get_queryset(self):
+        return Quiz.objects.order_by('?')[:1]
 
 class QuizCreateView(CreateView):
     template_name = 'create_quiz.html'

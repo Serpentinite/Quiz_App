@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/*　全てのWEBページに適用される　*/
+html{
+  font-family: sans-serif;
+}
+html * {
+  box-sizing: border-box;
+}
+.wrapper{
+    margin: 0 auto 0 auto;
+    max-width: 1400px;
+}
+/* header */
+header{
+    margin-top: 3px;
+    padding-top: 0;
+    box-sizing: border-box;
+  }
+h2{
+    color:#206a63;
+    border-bottom: 3px dotted #206a63;
+    margin: 50px 0 20px 0;
+    padding: 5px;
+}
+h3{
+  margin: 50px 0 20px 0;
+  color: #3c9d94;
+  border-bottom: 1px solid #3c9d94;
+}
+.center{
+    text-align: center;
+    font-size: large;
+}
+p{
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color: #0eb947;
+}
+a:visited{
+    color: #da5c35;
+}
+a:hover{
+    color: #4b2502;
+}
+a:active{
+        color: #ff6a3b;
+}
+.inline-block{
+    display: inline-block;      /* インラインブロック要素にする */
+    padding:  20px 50px auto auto;             /* 余白指定 */
+    height: 50px;              /* 高さ指定 */
+}
+.table{
+    margin-top: 10px;
+}
+.big{
+    font-size: large;
+    text-align: center;
+}
+@media screen and (min-width: 1060px){
+    #page_top {
+      right: calc(50% - 550px);
+    }
+}
