@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}クイズの挿入画面{% endblock %}
+{% block content %}
+<h2>クイズ</h2>
+{% for quiz in object_list %}
+    <p class="center">問題番号: <a href="{% url 'app:update_quiz' pk=quiz.id %}">{{ quiz.pk }}</a></p>
+    <p>問題:{{ quiz.quiz_content }}</p>
+    <div>
+    <div class="inline-block">答え:</div><p id="p2" class="inline-block">{{ quiz.answer }}</p>
+    </div>
+    <button type="button" onclick="clickBtn2();">答えを見る</button>
+    <button type="button" onclick="location.reload();">次の問題へ</button>  
+{% endfor %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
