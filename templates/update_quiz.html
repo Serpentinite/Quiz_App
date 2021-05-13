@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>問題編集</h3>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p  }}
+<input class="btn btn-info" type="submit" value="更新">
+<a href="{% url 'app:delete_quiz' pk=quiz.id %}"><button type="button" class="btn btn-danger">削除する</button></a>
+</form>
+{% endblock%}

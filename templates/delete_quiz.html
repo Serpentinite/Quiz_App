@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>問題削除画面</h3>
+<form method="POST">
+{% csrf_token %}
+<p>問題{{ object.id }}番を削除してもよろしいでしょうか</p>
+<ul class="list-group">
+    <li class="list-group-item">問題: {{ object.quiz_content }}</li>
+    <li class="list-group-item">答え: {{ object.answer }}</li>
+</ul>
+{{ form.as_p  }}
+<input type="submit" value="削除する">
+</form>
+{% endblock%}
