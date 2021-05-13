@@ -27,8 +27,6 @@ SECRET_KEY = 'fu(#=zbh@9(dv8y%z3kuqar$n_@p-9@jka@=5loia(*3l28=nd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -120,6 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
@@ -137,7 +136,7 @@ if 'LAPTOP-QKQ9VDB4' in hostname:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-    ALLOWED_HOSTS = [] # よくわからんけど、これも大事らしい
+    ALLOWED_HOSTS = []
 else:
     # 本番環境
     DEBUG = False
