@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}問題一覧{% endblock %}
 {% block content %}
-<div class="table">
 <h2>問題一覧</h2>
+<div class="table-responsive">
 <table class="table table-striped table-hover table-bordered">
     <thead class="thead-dark">
     <tr>
-        <th scope="col" class="center">No.</th>
-        <th scope="col" class="center">Quiz</th>
-        <th scope="col" class="center">Answer</th>
-        <th scope="col" class="center">Category</th>
-        <th scope="col" class="center">Sub Category</th>
+        <th scope="col" class="center text-nowrap">No.</th>
+        <th scope="col" class="center text-nowrap">Quiz</th>
+        <th scope="col" class="center text-nowrap">Answer</th>
+        <th scope="col" class="center text-nowrap">Category</th>
+        <th scope="col" class="center text-nowrap">Sub Category</th>
     </tr>
     </thead>
     {% for quiz in object_list %}
     <tr>
-        <th class="big"><a href="{% url 'app:update_quiz' pk=quiz.id %}">{{ quiz.pk }}</a></th>
-        <td>{{ quiz.quiz_content }}</td>
-        <td>{{ quiz.answer }}</td>
-        <td>{{ quiz.category }}</td>
-        <td>{{ quiz.sub_category }}</td>
+        <th class="big"><a href="{% url 'quiz:update_quiz' pk=quiz.id %}">{{ quiz.pk }}</a></th>
+        <td class="text-nowrap">{{ quiz.quiz_content }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.answer }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.category }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.sub_category }}</td class="text-nowrap">
     </tr>
     {% endfor %}
 </table>
 </div>
-{% include 'pagination2.html' %}
+{% include 'quiz\pagination2.html' %}
 {% endblock %}
