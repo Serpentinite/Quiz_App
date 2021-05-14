@@ -3,7 +3,7 @@
 {% block content %}
 <h2>問題一覧</h2>
 {% comment %} <div class="table-responsive"> {% endcomment %}
-<table class="table table-striped table-hover table-bordered" style="table-layout:fixed;width:100%;">
+<table class="table table-striped table-hover table-bordered">
     <thead class="thead-dark">
     <tr>
         <th scope="col" class="center text-nowrap">No.</th>
@@ -16,10 +16,10 @@
     {% for quiz in object_list %}
     <tr>
         <th class="big"><a href="{% url 'app:update_quiz' pk=quiz.id %}">{{ quiz.pk }}</a></th>
-        <td class="text-nowrap" style="word-wrap:break-word;">{{ quiz.quiz_content }}</td class="text-nowrap">
-        <td class="text-nowrap" style="word-wrap:break-word;">{{ quiz.answer }}</td class="text-nowrap">
-        <td class="text-nowrap" style="word-wrap:break-word;">{{ quiz.category }}</td class="text-nowrap">
-        <td class="text-nowrap" style="word-wrap:break-word;">{{ quiz.sub_category }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.quiz_content }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.answer }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.category }}</td class="text-nowrap">
+        <td class="text-nowrap">{{ quiz.sub_category }}</td class="text-nowrap">
     </tr>
     {% endfor %}
 </table>
