@@ -1,2 +1,5 @@
-<h1>ページが誤っています</h1>
-<a href="{% url 'quiz:home' %}">ホーム画面へ</a>
+{% extends "base.html" %}
+{% block content %}
+<h1>エラーが発生しました。</h1>
+<a href="{% url 'app:home' %}">ホーム画面へ</a>
+{% endblock%}

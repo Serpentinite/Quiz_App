@@ -16,12 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app import views
-
+from app.views import show_error_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app/', include('app.urls')),
 ]
 
-handler404 = views.page_not_found
-handler500 = views.server_error
+handler404 = views.show_error_page

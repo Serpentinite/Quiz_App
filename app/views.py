@@ -51,11 +51,10 @@ class QuizDeleteView(DeleteView):
     success_url = reverse_lazy('app:quiz_list')
 
 # エラーハンドリング
-def page_not_found(request, exception):
-    return render(request, '404.html', status=404)
-
-def server_error(request):
-    return render(request, '500.html', status=500)
+def show_error_page(request, exception):
+    return render(
+        request, '404.html', status=404
+    )
 
 
 
