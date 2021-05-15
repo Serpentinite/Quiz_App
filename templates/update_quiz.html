@@ -1,9 +1,26 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 <h3>問題編集</h3>
 <form method="POST">
 {% csrf_token %}
-{{ form.as_p  }}
+<div class="col-2 mb-4">
+{{ form.id | as_crispy_field }}
+</div>
+<div class="mb-4">
+{{ form.quiz_content | as_crispy_field }}
+</div>
+<div class="mb-4">
+{{ form.answer | as_crispy_field }}
+</div>
+<div class="row">
+<div class="group col-md-3 mb-4">
+{{ form.category | as_crispy_field }}
+</div>
+<div class="group col-md-6 mb-4">
+{{ form.sub_category | as_crispy_field }}
+</div>
+</div>
 <input class="btn btn-info" type="submit" value="更新">
 <a href="{% url 'app:delete_quiz' pk=quiz.id %}"><button type="button" class="btn btn-danger">削除する</button></a>
 </form>
