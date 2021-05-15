@@ -1,9 +1,26 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 <h3>問題作成</h3>
 <form method="POST">
 {% csrf_token %}
-<div class="form">{{ form.as_p }}</div>
+<div class="col-3 mb-4">
+{{ form.id | as_crispy_field }}
+</div>
+<div class="mb-4">
+{{ form.quiz_content | as_crispy_field }}
+</div>
+<div class="mb-4">
+{{ form.answer | as_crispy_field }}
+</div>
+<div class="row">
+<div class="group col-md-3 mb-4">
+{{ form.category | as_crispy_field }}
+</div>
+<div class="group col-md-6 mb-4">
+{{ form.sub_category | as_crispy_field }}
+</div>
+</div>
 <input class="btn btn-success" type="submit" value="問題作成">
 </form>
 {% endblock%}

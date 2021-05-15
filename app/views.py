@@ -19,7 +19,7 @@ class QuizFormView(ListView):
 
 class QuizCreateView(CreateView):
     template_name = 'create_quiz.html'
-    form_class = forms.CreateQuizForm
+    form_class = forms.QuizForm
     model = Quiz
 
     def get_initial(self, **kwargs):
@@ -42,7 +42,7 @@ class QuizListView(PaginationMixin, ListView):
 class QuizUpdateView(UpdateView):
     model = Quiz
     template_name = 'update_quiz.html'
-    form_class = forms.QuizUpdateForm
+    form_class = forms.QuizForm
 
 
 class QuizDeleteView(DeleteView):
