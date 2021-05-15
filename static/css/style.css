@@ -61,8 +61,19 @@ a:active{
     font-size: large;
     text-align: center;
 }
-@media screen and (min-width: 1060px){
-    #page_top {
-      right: calc(50% - 550px);
+
+@media screen and (max-width: 640px) {
+    .tbl-r th{
+        display: block;
+        width: 100%;
+        border-bottom-width: thin;
     }
-}
+    .tbl-r td {
+        display: block;
+        width: 100%;
+        border-bottom-width: thin;
+    }
+    #last{
+        border-bottom: solid;
+    }
+  }
